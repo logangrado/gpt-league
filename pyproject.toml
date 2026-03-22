@@ -1,0 +1,12 @@
+[project]
+name = "gpt-league"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gpt-racing",
+]
+
+[tool.uv.sources]
+gpt-racing = { git = "ssh://git@github.com/logangrado/gpt-racing.git", tag="v0.2.0"}
