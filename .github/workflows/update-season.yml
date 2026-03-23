@@ -18,11 +18,6 @@ jobs:
         with:
           ref: main
 
-      - name: Set up SSH for private dependency
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.GPT_RACING_DEPLOY_KEY }}
-
       - uses: astral-sh/setup-uv@v5
 
       - name: Run update-season
