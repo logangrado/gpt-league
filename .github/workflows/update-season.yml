@@ -16,15 +16,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: temp 
 
       - uses: astral-sh/setup-uv@v5
 
       - name: Run update-season
         id: update
         run: |
+          set +e
           output=$(uv run gpt-scoring update-season ./configs/gpt/26-1.jsonnet 10301 128672 2>&1)
+          exit_code=$?
           echo "$output"
+          set -e
+          [ $exit_code -eq 0 ] || exit $exit_code
           added=$(echo "$output" | grep "^Added:" | paste -sd ", ")
           echo "added=$added" >> "$GITHUB_OUTPUT"
 
