@@ -1,0 +1,62 @@
+name: Update Season
+
+on:
+  schedule:
+    # Tuesday 4:00 AM UTC = Monday 10 PM CST (UTC-6) / 11 PM CDT (UTC-5)
+    - cron: "0 4 * * 2"
+  workflow_dispatch:
+
+jobs:
+  update-season:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up SSH for private dependency
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GPT_RACING_DEPLOY_KEY }}
+
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Run update-season
+        id: update
+        run: |
+          output=$(uv run gpt-scoring update-season ./configs/gpt/26-1.jsonnet 10301 128672 2>&1)
+          echo "$output"
+          added=$(echo "$output" | grep "^Added:" | paste -sd ", ")
+          echo "added=$added" >> "$GITHUB_OUTPUT"
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet configs/gpt/26-1.jsonnet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ADDED: ${{ steps.update.outputs.added }}
+        run: |
+          branch="auto/update-season-$(date +%Y%m%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add configs/gpt/26-1.jsonnet
+          git commit -m "$ADDED"
+          git push origin "$branch"
+          gh pr create \
+            --title "$ADDED" \
+            --body "Automated season update via \`gpt-scoring update-season\`." \
+            --base main \
+            --head "$branch"
