@@ -9,4 +9,4 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-gpt-racing = { git = "https://github.com/logangrado/gpt-racing.git", tag = "v0.6.1" }
+gpt-racing = { git = "https://github.com/logangrado/gpt-racing.git", tag = "v0.7.0" }
