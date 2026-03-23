@@ -58,7 +58,7 @@ jobs:
           git checkout -b "$branch"
           git add configs/gpt/26-1.jsonnet
           git commit -m "$ADDED"
-          git push origin "$branch"
+          git push --force origin "$branch"
           gh pr create \
             --title "$ADDED" \
             --body "Automated season update via \`gpt-scoring update-season\`." \
