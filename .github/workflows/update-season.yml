@@ -22,9 +22,18 @@ jobs:
 
       - name: Run update-season
         id: update
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          CLIENT_USERNAME: ${{ secrets.CLIENT_USERNAME }}
+          CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
         run: |
+          set +e
           output=$(uv run gpt-scoring update-season ./configs/gpt/26-1.jsonnet 10301 128672 2>&1)
+          exit_code=$?
           echo "$output"
+          set -e
+          [ $exit_code -eq 0 ] || exit $exit_code
           added=$(echo "$output" | grep "^Added:" | paste -sd ", ")
           echo "added=$added" >> "$GITHUB_OUTPUT"
 
@@ -49,9 +58,13 @@ jobs:
           git checkout -b "$branch"
           git add configs/gpt/26-1.jsonnet
           git commit -m "$ADDED"
-          git push origin "$branch"
-          gh pr create \
-            --title "$ADDED" \
-            --body "Automated season update via \`gpt-scoring update-season\`." \
-            --base main \
-            --head "$branch"
+          git push --force origin "$branch"
+          if gh pr view "$branch" --json state -q .state 2>/dev/null | grep -q "OPEN"; then
+            echo "PR already open for $branch, skipping."
+          else
+            gh pr create \
+              --title "$ADDED" \
+              --body "Automated season update via \`gpt-scoring update-season\`." \
+              --base main \
+              --head "$branch"
+          fi

@@ -3,9 +3,6 @@ name: Compute Standings
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'configs/**'
-      - 'pyproject.toml'
   push:
     branches: [main]
     paths:
