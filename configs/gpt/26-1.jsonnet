@@ -15,7 +15,6 @@
         { name: 'Austin Cobb3' },
         { name: 'Chris Sherburn' },
         { name: 'Dale Green' },
-        { name: 'David Fernandes' },
         { name: 'Derek M Cyphers' },
         { name: 'Derek Tirums' },
         { name: 'Ed Eijsenring' },
@@ -43,6 +42,7 @@
       color: '#c9a84c',
       drivers: [
         { name: 'Casey Mcdonald' },
+        { name: 'David Fernandes' },
         { name: 'Enrico Gregoratto' },
         { name: 'George Poulos' },
         { name: 'James Franznick' },
