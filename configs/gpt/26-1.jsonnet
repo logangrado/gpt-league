@@ -109,5 +109,6 @@
         },
       ],
     },
+    { subsession_id: 84164646, race_name: 'Road America' },
   ],
 }
