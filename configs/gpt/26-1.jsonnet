@@ -109,5 +109,20 @@
         },
       ],
     },
+    {
+      subsession_id: 84164646,
+      race_name: 'Road America',
+      points_type: 'major',
+      penalties: [
+        // Logan
+        { user_id: 622340, time: 5 },
+        // Mann
+        { user_id: 603983, time: 5 },
+        // Logan
+        { user_id: 1049877, time: 5 },
+        // Mann
+        { user_id: 721524, time: 5 },
+      ],
+    },
   ],
 }

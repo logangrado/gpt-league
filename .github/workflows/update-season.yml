@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: temp 
+          ref: main 
 
       - uses: astral-sh/setup-uv@v5
 
