@@ -1,0 +1,40 @@
+name: Compute Standings
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'configs/**'
+      - 'pyproject.toml'
+  push:
+    branches: [main]
+    paths:
+      - 'configs/**'
+      - 'pyproject.toml'
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run scoring
+        env:
+          CLIENT_TOKEN: ${{ secrets.CLIENT_TOKEN }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          CLIENT_USERNAME: ${{ secrets.CLIENT_USERNAME }}
+          CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+        run: uv run gpt-scoring run configs/gpt/26-1.jsonnet ./out
+
+      - name: Upload standings
+        uses: actions/upload-artifact@v4
+        with:
+          name: standings
+          path: out/
+          retention-days: 30
