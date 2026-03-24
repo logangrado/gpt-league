@@ -1,0 +1,637 @@
+<div id="abc123" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>
+#abc123 table {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#abc123 thead, tbody, tfoot, tr, td, th { border-style: none; }
+ tr { background-color: transparent; }
+#abc123 p { margin: 0; padding: 0; }
+ #abc123 .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #abc123 .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #abc123 .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #abc123 .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #abc123 .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #abc123 .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #abc123 .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #abc123 .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #abc123 .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #abc123 .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #abc123 .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #abc123 .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #abc123 .gt_spanner_row { border-bottom-style: hidden; }
+ #abc123 .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #abc123 .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #abc123 .gt_from_md> :first-child { margin-top: 0; }
+ #abc123 .gt_from_md> :last-child { margin-bottom: 0; }
+ #abc123 .gt_row { padding-top: 1px; padding-bottom: 1px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #abc123 .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #abc123 .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #abc123 .gt_row_group_first td { border-top-width: 2px; }
+ #abc123 .gt_row_group_first th { border-top-width: 2px; }
+ #abc123 .gt_striped { color: #333333; background-color: #eeeeee; }
+ #abc123 .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #abc123 .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #abc123 .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #abc123 .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #abc123 .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #abc123 .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #abc123 .gt_left { text-align: left; }
+ #abc123 .gt_center { text-align: center; }
+ #abc123 .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #abc123 .gt_font_normal { font-weight: normal; }
+ #abc123 .gt_font_bold { font-weight: bold; }
+ #abc123 .gt_font_italic { font-style: italic; }
+ #abc123 .gt_super { font-size: 65%; }
+ #abc123 .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #abc123 .gt_asterisk { font-size: 100%; vertical-align: 0; }
+ 
+</style>
+<table class="gt_table" data-quarto-bootstrap="false" data-quarto-disable-processing="false">
+<thead>
+<tr class="gt_heading">
+<td class="gt_heading gt_title gt_font_normal" colspan="15">Standings</td>
+</tr>
+<tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" colspan="2" id="Rank" rowspan="1" scope="col">Rank</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Class" rowspan="1" scope="col">Class</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" colspan="2" id="Class Rank" rowspan="1" scope="col">Class Rank</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Name" rowspan="1" scope="col">Name</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Rating" rowspan="1" scope="col">Rating</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" colspan="2" id="Rating Rank" rowspan="1" scope="col">Rating Rank</th>
+
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Race-1-Interlagos" rowspan="1" scope="col">Race 1<br/>Interlagos</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Race-2-Road-Atlanta" rowspan="1" scope="col">Race 2<br/>Road Atlanta</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Race-3-Imola" rowspan="1" scope="col">Race 3<br/>Imola</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Race-4-Sebring" rowspan="1" scope="col">Race 4<br/>Sebring</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" colspan="1" id="Race-5-Road-America" rowspan="1" scope="col">Race 5<br/>Road America</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" colspan="1" id="Total-Points" rowspan="1" scope="col">Total Points</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_left">(-)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_left">(-)</td>
+<td class="gt_row gt_left">Austin Cobb3</td>
+<td class="gt_row gt_left">1805</td>
+<td class="gt_row gt_left" style="text-align: right;">2</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">41</td>
+<td class="gt_row gt_left">50</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">1</td>
+<td class="gt_row gt_left">50</td>
+<td class="gt_row gt_left">75</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">175</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">2</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">2</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped">Jesse Lyon2</td>
+<td class="gt_row gt_left gt_striped">1855</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">1</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(-)</td>
+<td class="gt_row gt_left gt_striped">50</td>
+<td class="gt_row gt_left gt_striped">41</td>
+<td class="gt_row gt_left gt_striped">50</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">141</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_left">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_left">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left">Derek M Cyphers</td>
+<td class="gt_row gt_left">1764</td>
+<td class="gt_row gt_left" style="text-align: right;">4</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(-)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">33</td>
+<td class="gt_row gt_left">36</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">24</td>
+<td class="gt_row gt_left">33</td>
+<td class="gt_row gt_left">59</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">128</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left gt_striped">Leif Peterson</td>
+<td class="gt_row gt_left gt_striped">1703</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">7</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">24</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">12</td>
+<td class="gt_row gt_left gt_striped">36</td>
+<td class="gt_row gt_left gt_striped">27</td>
+<td class="gt_row gt_left gt_striped">48</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">111</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_left">(<span style="color:green">↑4</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_left">(<span style="color:green">↑4</span>)</td>
+<td class="gt_row gt_left">Luke Mann</td>
+<td class="gt_row gt_left">1663</td>
+<td class="gt_row gt_left" style="text-align: right;">10</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">6</td>
+<td class="gt_row gt_left">33</td>
+<td class="gt_row gt_left">27</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">14</td>
+<td class="gt_row gt_left">51</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">111</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑9</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑8</span>)</td>
+<td class="gt_row gt_left gt_striped">Scott Dancer</td>
+<td class="gt_row gt_left gt_striped">1719</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">6</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped">27</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">20</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">18</td>
+<td class="gt_row gt_left gt_striped">64</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">111</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_left">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_left">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left">Logan Grado</td>
+<td class="gt_row gt_left">1662</td>
+<td class="gt_row gt_left" style="text-align: right;">11</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left">36</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">16</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left">36</td>
+<td class="gt_row gt_left">34</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">106</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">8</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑4</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">1</td>
+<td class="gt_row gt_left gt_striped">(-)</td>
+<td class="gt_row gt_left gt_striped">James Franznick</td>
+<td class="gt_row gt_left gt_striped">1595</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">14</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:green">↑10</span>)</td>
+<td class="gt_row gt_left gt_striped">20</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left gt_striped">30</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left gt_striped">55</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">105</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_left">(-)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_left">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left">David Fernandes</td>
+<td class="gt_row gt_left">1664</td>
+<td class="gt_row gt_left" style="text-align: right;">9</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(-)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">1</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">6</td>
+<td class="gt_row gt_left">33</td>
+<td class="gt_row gt_left">20</td>
+<td class="gt_row gt_left">42</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">95</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">9</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓5</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">8</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left gt_striped">Matthew Siddall</td>
+<td class="gt_row gt_left gt_striped">1768</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">3</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">24</td>
+<td class="gt_row gt_left gt_striped">41</td>
+<td class="gt_row gt_left gt_striped">30</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">95</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_left">(<span style="color:red">↓5</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_left">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left">Ed Eijsenring</td>
+<td class="gt_row gt_left">1687</td>
+<td class="gt_row gt_left" style="text-align: right;">8</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(-)</td>
+<td class="gt_row gt_left">22</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">10</td>
+<td class="gt_row gt_left">18</td>
+<td class="gt_row gt_left">41</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">81</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">12</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">11</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left gt_striped">Matt Mosby</td>
+<td class="gt_row gt_left gt_striped"><span style="color:LightCoral">1638*</span></td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;"></td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">16</td>
+<td class="gt_row gt_left gt_striped">24</td>
+<td class="gt_row gt_left gt_striped">32</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">72</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_left">(<span style="color:green">↑7</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">12</td>
+<td class="gt_row gt_left">(<span style="color:green">↑5</span>)</td>
+<td class="gt_row gt_left">William Wolfe4</td>
+<td class="gt_row gt_left">1601</td>
+<td class="gt_row gt_left" style="text-align: right;">13</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">18</td>
+<td class="gt_row gt_left">6</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left">45</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">69</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">14</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">13</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓3</span>)</td>
+<td class="gt_row gt_left gt_striped">Nick Melaragno2</td>
+<td class="gt_row gt_left gt_striped">1567</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">17</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:red">↓6</span>)</td>
+<td class="gt_row gt_left gt_striped">30</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left gt_striped">22</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">6</td>
+<td class="gt_row gt_left gt_striped">16</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">68</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">15</td>
+<td class="gt_row gt_left">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_left">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left">Ross Yost</td>
+<td class="gt_row gt_left">1618</td>
+<td class="gt_row gt_left" style="text-align: right;">12</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">27</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left">39</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">66</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">16</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">2</td>
+<td class="gt_row gt_left gt_striped">(-)</td>
+<td class="gt_row gt_left gt_striped">Enrico Gregoratto</td>
+<td class="gt_row gt_left gt_striped">1579</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">15</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:red">↓5</span>)</td>
+<td class="gt_row gt_left gt_striped">18</td>
+<td class="gt_row gt_left gt_striped">20</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">14</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">12</td>
+<td class="gt_row gt_left gt_striped">18</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">56</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_left">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">15</td>
+<td class="gt_row gt_left">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left">Rich Minkler</td>
+<td class="gt_row gt_left">1544</td>
+<td class="gt_row gt_left" style="text-align: right;">22</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:red">↓3</span>)</td>
+<td class="gt_row gt_left">14</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">3</td>
+<td class="gt_row gt_left">12</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">2</td>
+<td class="gt_row gt_left">28</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">54</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">17</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑5</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">3</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left gt_striped">Robert Neville</td>
+<td class="gt_row gt_left gt_striped">1545</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">21</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left gt_striped">10</td>
+<td class="gt_row gt_left gt_striped">8</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">3</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left gt_striped">36</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">54</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_left">(<span style="color:red">↓9</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_left">(<span style="color:red">↓6</span>)</td>
+<td class="gt_row gt_left">Robby Prescott</td>
+<td class="gt_row gt_left"><span style="color:LightCoral">1697*</span></td>
+<td class="gt_row gt_left" style="text-align: right;"></td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">30</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">22</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">52</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">19</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped">Peter Kummer</td>
+<td class="gt_row gt_left gt_striped">1546</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">20</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:red">↓2</span>)</td>
+<td class="gt_row gt_left gt_striped">16</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">1</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">2</td>
+<td class="gt_row gt_left gt_striped">10</td>
+<td class="gt_row gt_left gt_striped">26</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">52</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">21</td>
+<td class="gt_row gt_left">(<span style="color:red">↓5</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_left">(<span style="color:red">↓3</span>)</td>
+<td class="gt_row gt_left">Nick Facciolo</td>
+<td class="gt_row gt_left">1557</td>
+<td class="gt_row gt_left" style="text-align: right;">19</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:red">↓5</span>)</td>
+<td class="gt_row gt_left">12</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">4</td>
+<td class="gt_row gt_left">16</td>
+<td class="gt_row gt_left">22</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">50</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">22</td>
+<td class="gt_row gt_left gt_striped">(-)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">18</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left gt_striped">Chris Sherburn</td>
+<td class="gt_row gt_left gt_striped">1572</td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;">16</td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped">8</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">4</td>
+<td class="gt_row gt_left gt_striped">10</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;">4</td>
+<td class="gt_row gt_left gt_striped">30</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">48</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">23</td>
+<td class="gt_row gt_left">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_left">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left">Dale Green</td>
+<td class="gt_row gt_left">1526</td>
+<td class="gt_row gt_left" style="text-align: right;">24</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:red">↓7</span>)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">8</td>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">20</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">31</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">24</td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">20</td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_left gt_striped">Marc Nistor</td>
+<td class="gt_row gt_left gt_striped"><span style="color:LightCoral">1543*</span></td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;"></td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_left gt_striped">24</td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">24</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">24</td>
+<td class="gt_row gt_left">(<span style="color:green">↑2</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_left">(<span style="color:green">↑1</span>)</td>
+<td class="gt_row gt_left">Casey Mcdonald</td>
+<td class="gt_row gt_left">1438</td>
+<td class="gt_row gt_left" style="text-align: right;">26</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:red">↓3</span>)</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">2</td>
+<td class="gt_row gt_left">2</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;">0</td>
+<td class="gt_row gt_left">8</td>
+<td class="gt_row gt_left">14</td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">24</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">26</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓5</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right gt_striped">21</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓3</span>)</td>
+<td class="gt_row gt_left gt_striped">Derek Tirums</td>
+<td class="gt_row gt_left gt_striped"><span style="color:LightCoral">1695*</span></td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;"></td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">22</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">22</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">27</td>
+<td class="gt_row gt_left">(<span style="color:red">↓3</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_left">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left">Rodney Campbell2</td>
+<td class="gt_row gt_left"><span style="color:LightCoral">1538*</span></td>
+<td class="gt_row gt_left" style="text-align: right;"></td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">14</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">14</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">28</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">7</td>
+<td class="gt_row gt_left gt_striped">(-)</td>
+<td class="gt_row gt_left gt_striped">George Poulos</td>
+<td class="gt_row gt_left gt_striped"><span style="color:LightCoral">1386*</span></td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;"></td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">0</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">4</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">29</td>
+<td class="gt_row gt_left">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">P</span></td>
+<td class="gt_row gt_right">22</td>
+<td class="gt_row gt_left">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left">Lennie Holland</td>
+<td class="gt_row gt_left">1505</td>
+<td class="gt_row gt_left" style="text-align: right;">25</td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;">(<span style="color:red">↓4</span>)</td>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">3</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">30</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">8</td>
+<td class="gt_row gt_left gt_striped">(-)</td>
+<td class="gt_row gt_left gt_striped">Robert Galejs</td>
+<td class="gt_row gt_left gt_striped"><span style="color:LightCoral">1423*</span></td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;"></td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">0</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">1</td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">1</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_left">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#b4b8bb; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">23</td>
+<td class="gt_row gt_left">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left">Greg Strelzoff</td>
+<td class="gt_row gt_left"><span style="color:LightCoral">1503*</span></td>
+<td class="gt_row gt_left" style="text-align: right;"></td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">0</td>
+</tr>
+<tr>
+<td class="gt_row gt_right gt_striped">31</td>
+<td class="gt_row gt_left gt_striped">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left gt_striped"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right gt_striped">9</td>
+<td class="gt_row gt_left gt_striped">(-)</td>
+<td class="gt_row gt_left gt_striped">Peter Sigourney</td>
+<td class="gt_row gt_left gt_striped"><span style="color:LightCoral">1458*</span></td>
+<td class="gt_row gt_left gt_striped" style="text-align: right;"></td>
+<td class="gt_row gt_left gt_striped" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped">0</td>
+<td class="gt_row gt_left gt_striped" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_left gt_striped"></td>
+<td class="gt_row gt_right gt_striped" style="border-left: 1px solid #000000;">0</td>
+</tr>
+<tr>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_left">(<span style="color:red">↓1</span>)</td>
+<td class="gt_row gt_left"><span style="background-color:#c9a84c; padding: 2px 6px; border-radius: 3px;">G</span></td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_left">(-)</td>
+<td class="gt_row gt_left">Ken Eskridge</td>
+<td class="gt_row gt_left"><span style="color:LightCoral">1113*</span></td>
+<td class="gt_row gt_left" style="text-align: right;"></td>
+<td class="gt_row gt_left" style="border-right: 1px solid #000000;"></td>
+<td class="gt_row gt_left">0</td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left" style="background-color: #bbbbbb;"></td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right" style="border-left: 1px solid #000000;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
