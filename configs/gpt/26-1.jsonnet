@@ -124,5 +124,9 @@
         { user_id: 721524, time: 5 },
       ],
     },
+    {
+      subsession_id: 84164647,
+      race_name: 'Road America 2',
+    },
   ],
 }
