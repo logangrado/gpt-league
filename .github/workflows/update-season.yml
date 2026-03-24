@@ -2,8 +2,8 @@ name: Update Season
 
 on:
   schedule:
-    # Tuesday 4:00 AM UTC = Monday 10 PM CST (UTC-6) / 11 PM CDT (UTC-5)
-    - cron: "0 4 * * 2"
+    # daily 4:00 AM UTC = 10 PM CST (UTC-6) / 11 PM CDT (UTC-5)
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 jobs:
@@ -49,10 +49,10 @@ jobs:
       - name: Open PR
         if: steps.diff.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
           ADDED: ${{ steps.update.outputs.added }}
         run: |
-          branch="auto/update-season-$(date +%Y%m%d)"
+          branch="auto/update-season"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
