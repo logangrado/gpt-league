@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Porsche Cup Season</title>
+	
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            background: linear-gradient(to right, #0a0a0a 0%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        nav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #c3f73a, transparent);
+            opacity: 0.6;
+        }
+
+        nav .container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #c3f73a;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background-color: #c3f73a;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #c3f73a;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            color: #c3f73a;
+        }
+
+        main {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 2rem;
+			margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c3f73a;
+        }
+
+        h3 {
+            color: #1a1a1a;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .mission-statement {
+            background: #c3f73a;
+            color: #000000;
+            padding: 2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(195, 247, 58, 0.3);
+            font-weight: 500;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #c3f73a;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #000000;
+            font-size: 1.2rem;
+        }
+
+        .info-box {
+            background-color: #f5f5f5;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            background-color: #f9ffe6;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .requirements {
+            background-color: #1a1a1a;
+            color: white;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .team-member {
+            margin-bottom: 1rem;
+        }
+
+        .team-member strong {
+            color: #000000;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .event-type {
+            background: white;
+            border: 2px solid #c3f73a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .event-type:hover {
+            background: #f9ffe6;
+        }
+
+        .event-type h4 {
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Standings Table Styles */
+        .standings-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .standings-table thead {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: white;
+        }
+
+        .standings-table th {
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 3px solid #c3f73a;
+            white-space: nowrap;
+        }
+
+        .standings-table th.name-header {
+            text-align: left;
+            min-width: 150px;
+        }
+
+        .standings-table th.major {
+            background-color: rgba(195, 247, 58, 0.2);
+        }
+
+        .standings-table tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.2s;
+        }
+
+        .standings-table tbody tr:hover {
+            background-color: #f9ffe6;
+        }
+
+        .standings-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .standings-table tbody tr:nth-child(even):hover {
+            background-color: #f9ffe6;
+        }
+
+        /* Gold class styling */
+        .standings-table tbody tr.gold-class {
+            background-color: #fff4d9;
+        }
+
+        .standings-table tbody tr.gold-class:hover {
+            background-color: #ffe9b3;
+        }
+
+        .standings-table td {
+            padding: 0.75rem 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .standings-table .rank-col {
+            font-weight: 700;
+            color: #000;
+            width: 50px;
+        }
+
+        .standings-table .name-col {
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: left;
+        }
+
+        .standings-table .race-col {
+            color: #666;
+            font-style: italic;
+        }
+
+        .standings-table .points-col {
+            font-weight: 700;
+            color: #000;
+            background-color: rgba(195, 247, 58, 0.15);
+            border-left: 2px solid #c3f73a;
+            min-width: 80px;
+        }
+
+        .table-note {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Hidden source data */
+        #sourceStandings {
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .standings-table {
+                font-size: 0.85rem;
+            }
+
+            .standings-table th,
+            .standings-table td {
+                padding: 0.5rem 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container hero" style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
+        <img src="GPT Globe.png" alt="GPT Logo" style="max-width: 150px;">
+        <div>
+            <h1>The Grand Prix Tour</h1>
+            <p class="tagline">2026 Porsche Cup Season</p>
+        </div>
+    </div>
+</header>
+<nav>
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Competition Rules</a>
+        <a href="driverratings.html">Driver Ratings</a>
+        <a href="2026-porsche-cup.html">2026 Porsche Cup Season</a>
+        <a href="application.html">Driver Application</a>
+    </div>
+</nav>
+
+<main>
+    <h2 style="margin-top: 0;">Season Details</h2>
+    
+    <p>The 2026 season kicks off on January 12th, featuring the new 992.2 Porsche Cup car.</p>
+
+    <p>Details:</p>
+
+    <ul>
+        <li><strong>Setups:</strong> The GPT will be using fixed setups with traction control (TC) and anti-lock brakes (ABS) disabled, keeping continuity with what so many drivers loved about the previous Porsche Cup cars.</li>
+        
+        <li><strong>Schedule:</strong> The competition schedule will run from January to May, and align with the official iRacing schedule for 2026S01 and 2026S02 during that time. This allows drivers to double-dip on their practice time!</li>
+        
+        <li><strong>Drop Races:</strong> Core to the GPT design is recognizing sim racing is a hobby that must fit in with other life priorities. As such, there will be TWO drop races in this season.</li>
+        
+        <li><strong>Starts:</strong> Races will use standing starts, matching officials. The GPT strongly believes standing starts are the fairest and safest way to start races.</li>
+        
+        <li><strong>Qualifying:</strong> Races will feature 3 lap lone qualifying, offering drivers a fair opportunity to bring the tires using the new tire model up to ideal temperatures and set a representative fast lap.</li>
+        
+        <li><strong>Major Championships:</strong> As always, the GPT schedule will feature two events on the calendar designated as Majors. These races are longer (60 minutes instead of 45) and will feature more difficult tracks/conditions but reward drivers with more points!</li>
+    </ul>
+
+    <h2>Season Standings</h2>
+
+    <div class="standings-wrapper">
+        <table class="standings-table" id="displayStandings">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th class="name-header">Name</th>
+                    <th>R1<br/>Interlagos</th>
+                    <th>R2<br/>Road Atlanta</th>
+                    <th>R3<br/>Imola</th>
+                    <th>R4<br/>Sebring</th>
+                    <th class="major">R5<br/>Road America<br/>(Major)</th>
+                    <th>R6<br/>Adelaide</th>
+                    <th>R7<br/>The Bend</th>
+                    <th>R8<br/>Hockenheim</th>
+                    <th>R9<br/>Algarve</th>
+                    <th class="major">Suzuka<br/>Championship<br/>(Major)</th>
+                    <th>Total Points</th>
+                </tr>
+            </thead>
+            <tbody id="standingsBody">
+                <!-- Populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+    <p class="table-note">Major races highlighted. TBD races will be announced as the season progresses.</p>
+
+    <h2>Full Schedule</h2>
+    <img src="2026PcupSchedule.png" alt="PCup Schedule" style="max-width: 75%; display: block; margin: 1.5rem auto;">
+</main>
+
+<footer>
+    <p>&copy; 2026 GPT League. All rights reserved.</p>
+</footer>
+
+<script>
+    // Fetch and parse the external standings file
+    async function loadStandings() {
+        const displayBody = document.getElementById('standingsBody');
+        
+        if (!displayBody) return;
+        
+        try {
+            // Fetch the external standings file
+            const response = await fetch('standings_latest.html');
+            if (!response.ok) {
+                throw new Error('Failed to load standings');
+            }
+            
+            const html = await response.text();
+            
+            // Parse the HTML
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            // Find the table body in the fetched HTML
+            const sourceTable = doc.querySelector('.gt_table_body');
+            
+            if (!sourceTable) {
+                throw new Error('Table not found in standings file');
+            }
+            
+            const rows = sourceTable.querySelectorAll('tr');
+            
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length < 10) return; // Minimum columns needed
+                
+                // New structure: Rank(0), Change(1), Class(2), ClassRank(3), ClassChange(4), Name(5), Rating(6), RatingRank(7), RatingChange(8), Race1(9), Race2(10)..., Total(last)
+                const rank = cells[0].textContent.trim();
+                const classCell = cells[2].textContent.trim();
+                const name = cells[5].textContent.trim();
+                
+                // Extract class (P or G) from the class cell
+                const driverClass = classCell.includes('G') ? 'G' : 'P';
+                
+                // The total is always the last column
+                const totalPoints = cells[cells.length - 1].textContent.trim();
+                
+                // Race columns start at index 9 and go until the second-to-last column
+                const raceStartIndex = 9;
+                const raceEndIndex = cells.length - 1; // Everything before total points
+                
+                // Extract all race results dynamically
+                const raceResults = [];
+                for (let i = raceStartIndex; i < raceEndIndex; i++) {
+                    const points = cells[i].textContent.trim() || '—';
+                    raceResults.push(points);
+                }
+                
+                // Pad with placeholders to fill remaining race columns (up to 10 total races)
+                const totalRaceColumns = 10;
+                while (raceResults.length < totalRaceColumns) {
+                    raceResults.push('—');
+                }
+                
+                if (rank && name) {
+                    const newRow = document.createElement('tr');
+                    
+                    // Add gold class for Gold drivers
+                    if (driverClass === 'G') {
+                        newRow.classList.add('gold-class');
+                    }
+                    
+                    newRow.innerHTML = `
+                        <td class="rank-col">${rank}</td>
+                        <td class="name-col">${name}</td>
+                        ${raceResults.map((points, idx) => {
+                            // Apply race-col class for placeholder races
+                            const className = idx < raceResults.length - (totalRaceColumns - (raceEndIndex - raceStartIndex)) ? '' : 'race-col';
+                            return `<td class="${className}">${points}</td>`;
+                        }).join('')}
+                        <td class="points-col">${totalPoints}</td>
+                    `;
+                    
+                    displayBody.appendChild(newRow);
+                }
+            });
+        } catch (error) {
+            console.error('Error loading standings:', error);
+            displayBody.innerHTML = '<tr><td colspan="13" style="text-align: center; padding: 2rem;">Error loading standings. Please ensure standings_latest.html is in the same directory.</td></tr>';
+        }
+    }
+    
+    // Load standings when page loads
+    document.addEventListener('DOMContentLoaded', loadStandings);
+</script>
+</body>
+</html>

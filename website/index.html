@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Prix Tour - Premium Sim Racing League</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+nav {
+    background: linear-gradient(to right, #0a0a0a 0%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #c3f73a, transparent);
+    opacity: 0.6;
+}
+
+nav .container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #c3f73a;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    transform: translateY(-2px);
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+/* Active/current page styling - add 'active' class to current page link */
+nav a.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #c3f73a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #c3f73a;
+}
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            color: #c3f73a;
+        }
+
+        main {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c3f73a;
+        }
+
+        h3 {
+            color: #1a1a1a;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .mission-statement {
+            background: #c3f73a;
+            color: #000000;
+            padding: 2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(195, 247, 58, 0.3);
+            font-weight: 500;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #c3f73a;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #000000;
+            font-size: 1.2rem;
+        }
+
+        .info-box {
+            background-color: #f5f5f5;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            background-color: #f9ffe6;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .requirements {
+            background-color: #1a1a1a;
+            color: white;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .team-member {
+            margin-bottom: 1rem;
+        }
+
+        .team-member strong {
+            color: #000000;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .event-type {
+            background: white;
+            border: 2px solid #c3f73a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .event-type:hover {
+            background: #f9ffe6;
+        }
+
+        .event-type h4 {
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-container {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 2px solid #e0e0e0;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 350px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-wrapper {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container hero" style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
+            <img src="GPT Globe.png" alt="GPT Logo" style="max-width: 150px;">
+            <div>
+                <h1>The Grand Prix Tour</h1>
+                <p class="tagline">The sim racing experience you've always wanted</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Competition Rules</a>
+            <a href="driverratings.html">Driver Ratings</a>
+            <a href="2026-porsche-cup.html">2026 Porsche Cup Season</a>
+            <a href="application.html">Driver Application</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="mission-statement">
+            The Grand Prix Tour (GPT) strives to be an innovative sim racing league that provides members with the ideal competitive sim racing experience.
+        </div>
+
+        <section>
+            <h2>What Makes the GPT Different?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>High Expectations</h3>
+                    <p>Drivers are held to a strict standard of racecraft and courtesy. Both are required to be successful here.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Schedule Flexibility</h3>
+                    <p>Thanks to the league's unique ELO-MMR rating system, drivers can be competitive without needing to make every race.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Dynamic Events</h3>
+                    <p>The GPT schedule is carefully crafted to challenge drivers in dynamic ways throughout the season, including Major championship events that represent the stiffest challenges but with greater rewards.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>One Car</h3>
+                    <p>For series that offer multiple makes, drivers select a car and stick with it for the season, as they would in real life; no changing depending on the BoP of the week!</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>League Characteristics</h2>
+
+            <h3>Minimum Qualifications</h3>
+            
+            <div class="requirements">
+                <p><strong>Entry Requirements:</strong></p>
+                <ul>
+                    <li>Minimum iRating of 1,200</li>
+                    <li>Safety rating of B-3.0 or higher</li>
+                </ul>
+                <p><em>Note: Drivers who are referred to the league by an existing member can be exempted from this requirement.</em></p>
+            </div>
+
+            <p>Because the GPT is a league for highly skilled drivers, most members have an iRating of over 3,000 and are accustomed to top split pace. The minimum requirements demonstrate that drivers possess sufficient experience to be likely to enjoy the competition the GPT offers.</p>
+            
+            <p>In 2026 the GPT introduced a two-class structure, where drivers over 2,500 iRating or equivalent skill participate in the Platinum class, while drivers between 1,200 and 2,500 participate in the Gold class.</p>
+
+            <h2>League Schedule</h2>
+            
+            <p>The league strives to create schedules that appeal to the largest number of members. Each season the schedule is reviewed to optimize participation.</p>
+
+            <div class="info-box">
+                <p><strong>Current Schedule:</strong></p>
+                <ul>
+                    <li>Main series events: Monday nights</li>
+                    <li>Sessions open: 8:00 PM Eastern</li>
+                    <li>Qualifying begins: 9:00 PM Eastern</li>
+                    <li>Season length: 7-12 races per season</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <p><strong>Arrive and Drive Program:</strong> The GPT also offers an Arrive and Drive program that challenges drivers with surprise combinations of cars and tracks.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>League Rating System</h2>
+
+            <p>The GPT uses an innovative ELO-style ranking system developed by data scientists at Stanford. Similar to iRating, the system evaluates each driver according to their actual results and strength of field in previous events to rank drivers based on probability of success, with a bias towards more recent performances.</p>
+
+            <p>Overall Ranking, according to GPT Rating, is the measure by which drivers can qualify for the major events each year, and is the primary way of evaluating who the best drivers in the league are. The system is perpetual (it persists across seasons), just like iRating.</p>
+
+            <p><strong>This system allows flexibility in participation while still ensuring a fair and competitive experience.</strong></p>
+
+            <h2>Season Points Championship</h2>
+            <p>In May 2024, The Grand Prix Tour decided to also track a more traditional points-based championship for each calendar season, which rewards those drivers who consistently attend GPT events.</p>
+            <p>The total points pool is dynamic to the type of event, with three main Event Types:</p>
+            
+            <div class="event-types">
+                <div class="event-type">
+                    <h4>Regular Events</h4>
+                    <p>Top 20 Score Points</p>
+                </div>
+                
+                <div class="event-type">
+                    <h4>Major Championships</h4>
+                    <p>Top 30 Score Points<br><small>50% more points!</small></p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="pointsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Drop Race:</strong> Drivers will usually have two drop races per season.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Grand Prix Tour. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const normalPoints = [50, 41, 36, 33, 30, 27, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 3, 2, 1];
+        const majorPoints = [75, 64, 59, 55, 51, 48, 45, 42, 39, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 5, 4, 3, 2, 1];
+
+        const labels = Array.from({length: 30}, (_, i) => i + 1);
+
+        new Chart(document.getElementById('pointsChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Regular Events',
+                        data: normalPoints,
+                        borderColor: '#000000',
+                        backgroundColor: '#000000',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.1,
+                        pointRadius: 3,
+                        pointHoverRadius: 5
+                    },
+                    {
+                        label: 'Major Championships',
+                        data: majorPoints,
+                        borderColor: '#c3f73a',
+                        backgroundColor: '#c3f73a',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.1,
+                        pointRadius: 3,
+                        pointHoverRadius: 5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) {
+                                return 'P' + (context[0].dataIndex + 1);
+                            },
+                            label: function(context) {
+                                return (context.parsed.y || 0) + ' points';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Finishing Position'
+                        },
+                        ticks: {
+                            callback: function(value, index) {
+                                return index % 5 === 0 || index === 0 ? index + 1 : '';
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Points Awarded'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

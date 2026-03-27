@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Standings - The Grand Prix Tour</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+nav {
+    background: linear-gradient(to right, #0a0a0a 0%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #c3f73a, transparent);
+    opacity: 0.6;
+}
+
+nav .container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #c3f73a;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    transform: translateY(-2px);
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+/* Active/current page styling - add 'active' class to current page link */
+nav a.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #c3f73a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #c3f73a;
+}
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            color: #c3f73a;
+        }
+
+        main {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c3f73a;
+            margin-top: 0;
+        }
+
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .standings-table thead {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .standings-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #c3f73a;
+        }
+
+        .standings-table th.center {
+            text-align: center;
+        }
+
+        .standings-table th.right {
+            text-align: right;
+        }
+
+        .standings-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .standings-table td.center {
+            text-align: center;
+        }
+
+        .standings-table td.right {
+            text-align: right;
+        }
+
+        .standings-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .standings-table tbody tr:hover {
+            background-color: #f9ffe6;
+        }
+
+        .rank {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .movement.up {
+            color: green;
+        }
+
+        .movement.down {
+            color: red;
+        }
+
+        .rating-change.positive {
+            color: green;
+        }
+
+        .rating-change.negative {
+            color: red;
+        }
+
+        .provisional {
+            color: lightcoral;
+        }
+
+        .divider-row {
+            height: 1.5rem;
+            background-color: #f5f5f5;
+        }
+
+        .info-note {
+            background-color: #f9ffe6;
+            border-left: 4px solid #c3f73a;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .standings-table {
+                font-size: 0.9rem;
+            }
+
+            .standings-table th,
+            .standings-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container hero" style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
+            <img src="GPT Globe.png" alt="GPT Logo" style="max-width: 150px;">
+            <div>
+                <h1>GPT Driver Ratings</h1>
+                <p class="tagline">ELO Ratings for Active Drivers</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Competition Rules</a>
+            <a href="driverratings.html">Driver Ratings</a>
+			<a href="2026-porsche-cup.html">2026 Porsche Cup Season</a>
+            <a href="application.html">Driver Application</a>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Overall ELO Rankings</h2>
+
+            <div id="loading" class="loading">Loading standings...</div>
+
+            <table class="standings-table" id="standingsTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th class="center">Rank</th>
+                        <th class="center">Change</th>
+                        <th>Driver Name</th>
+                        <th class="center">GPT Rating</th>
+                        <th class="center">+/-</th>
+                        <th class="right">Races</th>
+                    </tr>
+                </thead>
+                <tbody id="standingsBody">
+                    <!-- Data loads here -->
+                </tbody>
+            </table>
+
+            <div class="info-note">
+                <strong>Note:</strong> Drivers marked with an asterisk (*) have provisional ratings due to limited race participation (minimum 4 races in the last 12 months).
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Grand Prix Tour. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function loadStandings() {
+    try {
+        const response = await fetch('elo_race_latest.html');
+        const htmlText = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+
+        const sourceRows = doc.querySelectorAll('#abc123 .gt_table_body tr');
+
+        if (!sourceRows || sourceRows.length === 0) {
+            document.getElementById('loading').textContent =
+                'No standings found in source file.';
+            return;
+        }
+
+        const tbody = document.getElementById('standingsBody');
+        let isRanked = true;
+
+                sourceRows.forEach((sourceRow) => {
+                    const cells = sourceRow.querySelectorAll('td');
+                    if (cells.length < 6) return;
+
+                    const row = document.createElement('tr');
+
+                    const rank = cells[0].textContent.trim();
+                    const changeText = cells[1].textContent.trim();
+                    const name = cells[2].textContent.trim();
+                    const ratingText = cells[3].textContent.trim();
+                    const ratingChangeText = cells[4].textContent.trim();
+                    const races = cells[5].textContent.trim();
+
+                    // Divider before provisional drivers
+                    if (!rank && isRanked) {
+                        const dividerRow = document.createElement('tr');
+                        dividerRow.className = 'divider-row';
+                        dividerRow.innerHTML = '<td colspan="6"></td>';
+                        tbody.appendChild(dividerRow);
+                        isRanked = false;
+                    }
+
+                    // Rank
+                    const rankCell = document.createElement('td');
+                    rankCell.className = 'center' + (rank ? ' rank' : '');
+                    rankCell.textContent = rank || '-';
+                    row.appendChild(rankCell);
+
+                    // Movement arrow
+                    const changeCell = document.createElement('td');
+                    changeCell.className = 'center';
+                    const changeMatch = changeText.match(/\(([^)]+)\)/);
+                    const change = changeMatch ? changeMatch[1] : changeText;
+
+                    if (change.includes('↑') || changeText.includes('green')) {
+                        changeCell.classList.add('movement', 'up');
+                    } else if (change.includes('↓') || changeText.includes('red')) {
+                        changeCell.classList.add('movement', 'down');
+                    }
+                    changeCell.textContent = change.replace(/\s+/g, '');
+                    row.appendChild(changeCell);
+
+                    // Name
+                    const nameCell = document.createElement('td');
+                    nameCell.textContent = name;
+                    row.appendChild(nameCell);
+
+                    // Rating
+                    const ratingCell = document.createElement('td');
+                    ratingCell.className = 'center';
+                    if (ratingText.includes('*')) ratingCell.classList.add('provisional');
+                    ratingCell.textContent = ratingText;
+                    row.appendChild(ratingCell);
+
+                    // Rating change
+                    const ratingChangeCell = document.createElement('td');
+                    ratingChangeCell.className = 'center';
+                    const ratingChangeMatch = ratingChangeText.match(/\(([^)]+)\)/);
+                    const ratingChange = ratingChangeMatch ? ratingChangeMatch[1] : ratingChangeText;
+
+                    if (ratingChange.startsWith('+') || ratingChangeText.includes('green')) {
+                        ratingChangeCell.classList.add('rating-change', 'positive');
+                    } else if (ratingChange.startsWith('-') || ratingChangeText.includes('red')) {
+                        ratingChangeCell.classList.add('rating-change', 'negative');
+                    }
+                    ratingChangeCell.textContent = ratingChange;
+                    row.appendChild(ratingChangeCell);
+
+                    // Races
+                    const racesCell = document.createElement('td');
+                    racesCell.className = 'right';
+                    racesCell.textContent = races;
+                    row.appendChild(racesCell);
+
+                    tbody.appendChild(row);
+                });
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('standingsTable').style.display = 'table';
+
+            } catch (error) {
+                console.error('Error loading standings:', error);
+                document.getElementById('loading').textContent =
+                    'Error loading standings. Please try again later.';
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadStandings);
+    </script>
+</body>
+</html>

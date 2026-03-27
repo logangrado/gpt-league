@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT League - Competition Rules</title>
+	
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+ nav {
+    background: linear-gradient(to right, #0a0a0a 0%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #c3f73a, transparent);
+    opacity: 0.6;
+}
+
+nav .container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #c3f73a;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    transform: translateY(-2px);
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+/* Active/current page styling - add 'active' class to current page link */
+nav a.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #c3f73a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #c3f73a;
+}
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            color: #c3f73a;
+        }
+
+        main {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 2rem;
+			margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c3f73a;
+        }
+
+        h3 {
+            color: #1a1a1a;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .mission-statement {
+            background: #c3f73a;
+            color: #000000;
+            padding: 2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(195, 247, 58, 0.3);
+            font-weight: 500;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #c3f73a;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #000000;
+            font-size: 1.2rem;
+        }
+
+        .info-box {
+            background-color: #f5f5f5;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            background-color: #f9ffe6;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .requirements {
+            background-color: #1a1a1a;
+            color: white;
+            border-left: 4px solid #c3f73a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .team-member {
+            margin-bottom: 1rem;
+        }
+
+        .team-member strong {
+            color: #000000;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .event-type {
+            background: white;
+            border: 2px solid #c3f73a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .event-type:hover {
+            background: #f9ffe6;
+        }
+
+        .event-type h4 {
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container hero" style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
+        <img src="GPT Globe.png" alt="GPT Logo" style="max-width: 150px;">
+        <div>
+            <h1>The Grand Prix Tour</h1>
+            <p class="tagline">Competition Rules and Driver Conduct Policy</p>
+        </div>
+    </div>
+</header>
+<nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Competition Rules</a>
+			<a href="driverratings.html">Driver Ratings</a>
+			<a href="2026-porsche-cup.html">2026 Porsche Cup Season</a>
+			<a href="application.html">Driver Application</a>
+        </div>
+    </nav>
+
+    <main>
+        <h2 style="margin-top: 0;">DRIVER CONDUCT POLICY</h2>
+        
+        <p>The GPT League strives to be the ultimate competitive experience for its members. However, a culture of respect, sportsmanship, and professionalism is core to that experience. All rules and restrictions found in the iRacing sporting code apply to the league unless specifically stated otherwise.</p>
+
+        <p>Some concrete expectations for how respect, sportsmanship, and professionalism is demonstrated on and off the track include:</p>
+
+        <ul>
+            <li><strong>Clear Communication:</strong> Express your ideas and opinions clearly and respectfully. Use appropriate language and tone. Profanity of any kind is not acceptable.</li>
+            
+            <li><strong>Conflict Resolution:</strong> Approach conflicts with a constructive mindset. Seek to resolve disagreements through open dialogue and finding common ground rather than escalating the situation. Very few incidents are 100% the fault of one party. Apologies flowing both directions is role model behavior regardless of fault.</li>
+            
+            <li><strong>Courtesy:</strong> Practice common courtesies such as saying "please" and "thank you." Basic acts of courtesy show respect for others' presence and contributions.</li>
+            
+            <li><strong>Respect for Diversity:</strong> Embrace and respect the diversity of backgrounds, opinions, and cultures. Treat everyone with fairness and dignity, regardless of their differences.</li>
+        </ul>
+
+        <div class="warning">
+            <strong>Warning:</strong> Violations of the Driver Conduct Policy will result in one warning, followed by escalating consequences up to and including removal from the league.
+        </div>
+
+        <div class="danger">
+            <strong>Immediate Disqualification:</strong> Intentional wrecking is expressly prohibited and will result in immediate disqualification from an event and removal from the league.
+        </div>
+
+        <h2>RACE STARTS</h2>
+
+        <p>For events with <strong>standing starts</strong>, the race starts when the green flag waves. There are no other restrictions.</p>
+
+        <p>For events with <strong>rolling starts</strong>, the race starts when the green flag waves. Drivers are expected to stay in their lane (stay behind the car ahead) until green. It is recommended that drivers maintain at least a half-car gap between them and the car ahead until green. Drivers who fail to follow this recommendation are taking avoidable risk for lap 1 incidents and this will be considered in any IRRs.</p>
+
+        <h2>Passing & On-Track Behavior</h2>
+
+        <ul>
+            <li>The driver in front has the right to choose any line at any section of the track. The driver in front loses this right when an overtaking driver achieves axle-to-axle overlap (front axle to rear axle). At this point, drivers are in "side-by-side" position and both have to give each other room to race fairly on the racing surface. <em>Note: On straights, any overlap constitutes a "side-by-side" position and drivers must leave each other room.</em></li>
+
+            <li>Defending is allowed and accepted as one move by the driver in front. Drivers are not allowed to move to defend if there is any overlap between cars. Note that following a racing line into a corner is not considered defending (unless the cars are deemed side-by-side, in which case racing room must be provided).</li>
+
+            <li>Both the passing driver and the driver being passed are responsible for fair racing during the pass.</li>
+
+            <li>Passing attempts when going into a turn are where most avoidable incidents happen. The preferred racing line through most corners is usually very narrow and sometimes it will be impossible for two cars to negotiate tight corners side-by-side at full speed. For each corner, the right to the preferred racing line is decided at the turn-in point. A driver attempting to pass at corner entry has to be in a side-by-side position, as defined in Rule 1 of this section, at the turn-in point to have a right to enter the corner side-by-side. If not, they must back off and give way to the driver up front.</li>
+
+            <li>Dive Bombing is a high-risk maneuver and is therefore highly discouraged. Incidents resulting from a failed dive bomb attempt are subject to harsher penalties (see LPS system below). Dive bombs can be penalized even if no contact occurs, such as if the driver ahead recognizes the move and is able to take avoiding action.</li>
+
+            <li>Brake checking, unnecessary slowing through a corner (lingering at or near apex to block other drivers), punting, bump-passing, cutting-off/chopping are all deemed deliberate and unsportsmanlike actions whether there is contact or not, and subject to penalty.</li>
+
+            <li>Blocking is not allowed and subject to a penalty. Moving under braking is considered blocking.</li>
+
+            <li>Weaving to break a draft is only allowed within the "one move" rule (see Rule 2). Excessive weaving to break a draft is considered blocking and subject to penalty.</li>
+
+            <li>Out-of-control or spinning drivers must lock their brakes until fully stopped and are ready to move once again under control. This is a racing safety measure as it makes it easier for other drivers to predict the movements of the car out of control/spinning. Failure to do so is subject to penalty.</li>
+
+            <li>Drivers who go off track limits but can keep their cars under control are responsible for rejoining the racing surface in a safe manner by slowing down and/or waiting for traffic to clear. Rejoins should be done parallel to the track surface whenever possible. Drivers that find themselves blocking any portion of the track should: 1) Hold position until there is a sufficient gap in traffic, 2) Try to move off the racing line, if applicable, 3) Rejoin the track safely. Failure to follow any of the three steps above may merit an unsafe rejoin penalty.</li>
+
+            <li>Flashing of lights is permitted to either signal an impending pass or that way will be given for a pass by a faster driver. The flashing can not be more than 3 flashes or longer than 2 seconds.</li>
+
+            <li>Drivers who receive a blue flag must facilitate a pass on one of the next three straights or within 30 seconds, whichever comes first, once the faster car has achieved a gap of 1 second or less. While blue flags do not absolve the faster car from the responsibility to get by safely, blue flag passes should be facilitated on straights with the car ahead lifting off the throttle as much or little as necessary so that the pass is completed before the turn-in point for the next corner. Drivers who fail to attempt to facilitate a pass within this window or manner will receive an automatic 10 second post-race penalty. This is a zero tolerance issue. <em>Note: When two or more drivers are battling for position and receive a blue flag, the timer to facilitate the pass starts when the battling cars have no overlap with each other.</em></li>
+
+            <li>In pit lane, cars on the faster lane have right-of-way. Cars coming out of their pit box should wait or delay their move to the fast lane if there is going to be an overlap between cars.</li>
+        </ul>
+
+        <h2>Incident Review Request (IRR) Guidelines, Penalties, and Processes</h2>
+
+        <p>Incidents can be requested for review if they result in material damage or time loss or loss of control. Only involved drivers or league admins can submit a request.</p>
+
+        <ul>
+            <li>All Incidents will be reviewed by three to five fellow members, and penalties will be assigned by a majority ruling.</li>
+            
+            <li>The GPT does not currently employ live race control.</li>
+            
+            <li>Drivers found at fault for incidents will receive license points (LPs) according to the License Point System (LPS). Each license point also comes with a 5-second time penalty, added to the final standings of the race where it was earned. This includes penalties received during a Heat.</li>
+            
+            <li>Additional penalties earned through the LPS must be served in the next race in which the penalized driver competes. Drivers cannot serve multiple penalties in the same race. In such cases, the most severe penalty must be served first.</li>
+            
+            <li>The incident review teams will be asked evaluate incidents through a lens of risk and responsibility. Drivers who take risks that are inconsistent with smart racecraft are more likely to be held responsible for an incident.</li>
+            
+            <li>Drivers are encouraged to "right wrongs" in-race if possible to mitigate potential post-race penalties.</li>
+        </ul>
+
+        <h2>License Point System</h2>
+
+        <p>Drivers earn <strong>-0.5 LPs</strong> for clean races.</p>
+
+        <p>Drivers receive <strong>0 LPs</strong> for incidents deemed to be racing incidents or unavoidable contact, or cases where a driver or drivers suffer the consequences of their bad decisions immediately and without affecting any other cars.</p>
+
+        <p>Drivers receive <strong>1 LP</strong> for:</p>
+
+        <ul>
+            <li>Any incident that causes a loss of control (time loss) or material damage to another driver (who is not also found at fault).</li>
+            <li>Forcing a driver off track (four wheels off), even if no contact occurs.</li>
+            <li>Unsafe rejoins.</li>
+            <li>Receiving an iRacing DQ for incident limits.</li>
+            <li>Receiving one or more LPS in three consecutive events.</li>
+        </ul>
+
+        <p>Drivers may receive an <strong>additional license point</strong> for:</p>
+
+        <ul>
+            <li>An incident as described above that is deemed to be especially reckless or ill-advised (such as a failed dive bomb or creating a completely avoidable incident).</li>
+            <li>Repeat violations of the Driver Conduct Policy</li>
+        </ul>
+
+        <h3>RACE STARTS / LAP 1</h3>
+
+        <div class="info">
+            Incidents that occur on Lap 1 are subject to an additional <strong>0.5 LPS</strong>. Drivers who demonstrate patterns of Lap 1 incidents may be subject to additional penalties at the discretion of the Incident Review Team.
+        </div>
+
+        <p>The LPS is a persistent system, meaning there is no reset even across seasons. The only way to effectively lower your LPS is to participate in events and complete them cleanly.</p>
+
+        <h3>PENALTIES FOR ACCUMULATING LPS</h3>
+
+        <p>The first time a driver crosses these thresholds, they incur the following additional penalties:</p>
+
+        <ul>
+            <li><strong>4 or more LPS</strong> - Driver may not participate in qualifying / must start from the back of the grid</li>
+            <li><strong>6 or more LPS</strong> - Driver may not participate in qualifying and must start from the pits</li>
+            <li><strong>8 LPS</strong> - Driver will be removed from the league</li>
+        </ul>
+
+        <h2>Definitions</h2>
+
+        <ul>
+            <li><strong>Overlap</strong> means any portion of the vehicles are in line such that they cannot occupy the same space on track without creating contact.</li>
+
+            <li><strong>The Turn-In Point</strong> is defined as the prevailing point at which drivers in the event initiate steering into the corner. When needed, the turn-in point of the Top 3 qualifying drivers will be used to establish the standard if there is any debate as to the turn-in point for a particular corner.</li>
+
+            <li><strong>Dive Bombing</strong> is an overtake attempt defined by iRacing as trying to out-brake your opponent from a car length (or more) away. Often the attempting car is out of control and the driver ahead does not expect it, resulting in contact at turn-in.</li>
+
+            <li><strong>Cutting-Off / Chopping</strong> is defined as any aggressive or sudden change of racing line in close proximity to the following car.</li>
+
+            <li><strong>Blocking</strong> is defined as changing the racing line or weaving as a defensive maneuver (in reaction to and with the intent to impede the car behind)</li>
+
+            <li><strong>Moving Under Braking</strong> is defined as any car that changes its line through the corner after entering the braking zone</li>
+
+            <li><strong>A straight</strong> is defined as any section of the race track in which the competitors travel in a straight line for any significant time, and also includes any curved sections of track where there is more than one line the cars take without lifting under normal circumstances (eg: the banking at Daytona is a straight, the kink at Road America is not).</li>
+
+            <li><strong>Material Damage</strong> is defined as damage that noticeably affects the performance of the vehicle or results in required repairs (may or may not include a meatball flag)</li>
+
+            <li><strong>A lane</strong> is determined by the car ahead. Staying in your lane means maintaining some front-car to trailing-car overlap such that the car behind could not drive past the car ahead without contact.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GPT League. All rights reserved.</p>
+    </footer>
+</body>
+</html>
