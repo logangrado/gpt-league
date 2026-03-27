@@ -127,7 +127,7 @@
     },
     { 
       subsession_id: 84445944, 
-      race_name: 'Adelaide Street Circuit',
+      race_name: 'Adelaide',
       penalties: [
         { time: 5, name: 'Matthew Siddall' },
       ],
