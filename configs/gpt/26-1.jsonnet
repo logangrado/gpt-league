@@ -124,5 +124,6 @@
         { user_id: 721524, time: 5 },
       ],
     },
+    { subsession_id: 84445944, race_name: 'Adelaide Street Circuit' },
   ],
 }
