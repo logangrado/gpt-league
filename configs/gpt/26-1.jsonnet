@@ -13,13 +13,9 @@
       color: '#b4b8bb',
       drivers: [
         { name: 'Austin Cobb3' },
-        { name: 'Chris Sherburn' },
-        { name: 'Dale Green' },
-        { name: 'David Fernandes' },
         { name: 'Derek M Cyphers' },
         { name: 'Derek Tirums' },
         { name: 'Ed Eijsenring' },
-        { name: 'Greg Strelzoff' },
         { name: 'Jesse Lyon2' },
         { name: 'Leif Peterson' },
         { name: 'Lennie Holland' },
@@ -34,7 +30,6 @@
         { name: 'Robby Prescott' },
         { name: 'Ross Yost' },
         { name: 'Scott Dancer' },
-        { name: 'William Wolfe4' },
       ],
     },
     {
@@ -42,9 +37,13 @@
       symbol: 'G',
       color: '#c9a84c',
       drivers: [
+        { name: 'Chris Sherburn' },
+        { name: 'Dale Green' },
+        { name: 'David Fernandes' },
         { name: 'Casey Mcdonald' },
         { name: 'Enrico Gregoratto' },
         { name: 'George Poulos' },
+        { name: 'Greg Strelzoff' },
         { name: 'James Franznick' },
         { name: 'Ken Eskridge' },
         { name: 'Peter Kummer' },
@@ -52,6 +51,8 @@
         { name: 'Robert Galejs' },
         { name: 'Robert Neville' },
         { name: 'Rodney Campbell2' },
+        { name: 'Samuel de Oliveira' },        
+        { name: 'William Wolfe4' },
       ],
     },
   ],
@@ -122,6 +123,13 @@
         { user_id: 1049877, time: 5 },
         // Mann
         { user_id: 721524, time: 5 },
+      ],
+    },
+    { 
+      subsession_id: 84445944, 
+      race_name: 'Adelaide',
+      penalties: [
+        { time: 5, name: 'Matthew Siddall' },
       ],
     },
   ],
