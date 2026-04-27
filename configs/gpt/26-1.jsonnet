@@ -45,6 +45,7 @@
         { name: 'George Poulos' },
         { name: 'Greg Strelzoff' },
         { name: 'James Franznick' },
+        { name: 'Julian Jones4' },
         { name: 'Ken Eskridge' },
         { name: 'Peter Kummer' },
         { name: 'Peter Sigourney' },
