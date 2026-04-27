@@ -132,5 +132,7 @@
         { time: 5, name: 'Matthew Siddall' },
       ],
     },
+    { subsession_id: 84804777, race_name: 'Shell V-Power Motorsport Park at The Bend' },
+    { subsession_id: 85156109, race_name: 'Hockenheimring Baden-Württemberg' },
   ],
 }
