@@ -134,7 +134,7 @@
     },
     { 
       subsession_id: 84804777, 
-      race_name: 'The Bend' 
+      race_name: 'The Bend',
       penalties: [
         { time: 5, name: 'Marc Nistor' },
       ],
