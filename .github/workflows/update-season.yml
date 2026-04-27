@@ -17,6 +17,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 0
+
+      - name: Use existing PR branch if open
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
+        run: |
+          branch="auto/update-season"
+          if gh pr view "$branch" --json state -q .state 2>/dev/null | grep -q "OPEN"; then
+            git fetch origin "$branch"
+            git checkout -b "$branch" "origin/$branch"
+            echo "Switched to existing PR branch to preserve edits."
+          fi
 
       - uses: astral-sh/setup-uv@v5
 
@@ -55,10 +67,12 @@ jobs:
           branch="auto/update-season"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$branch"
+          if ! git rev-parse --verify "$branch" &>/dev/null; then
+            git checkout -b "$branch"
+          fi
           git add configs/gpt/26-1.jsonnet
           git commit -m "$ADDED"
-          git push --force origin "$branch"
+          git push origin "$branch"
           if gh pr view "$branch" --json state -q .state 2>/dev/null | grep -q "OPEN"; then
             echo "PR already open for $branch, skipping."
           else
