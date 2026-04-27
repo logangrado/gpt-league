@@ -132,7 +132,21 @@
         { time: 5, name: 'Matthew Siddall' },
       ],
     },
-    { subsession_id: 84804777, race_name: 'Shell V-Power Motorsport Park at The Bend' },
-    { subsession_id: 85156109, race_name: 'Hockenheimring Baden-Württemberg' },
+    { 
+      subsession_id: 84804777, 
+      race_name: 'The Bend' 
+      penalties: [
+        { time: 5, name: 'Marc Nistor' },
+      ],
+    },
+    { 
+      subsession_id: 85156109, 
+      race_name: 'Hockenheimring',
+      penalties: [
+        { time: 5, name: 'Logan Grado' },
+        { time: 5, name: 'William Wolfe4' },
+        { time: 5, name: 'James Franznick' },
+      ],
+    },
   ],
 }
