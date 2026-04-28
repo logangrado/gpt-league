@@ -45,6 +45,7 @@
         { name: 'George Poulos' },
         { name: 'Greg Strelzoff' },
         { name: 'James Franznick' },
+        { name: 'Julian Jones4' },
         { name: 'Ken Eskridge' },
         { name: 'Peter Kummer' },
         { name: 'Peter Sigourney' },
@@ -130,6 +131,22 @@
       race_name: 'Adelaide',
       penalties: [
         { time: 5, name: 'Matthew Siddall' },
+      ],
+    },
+    { 
+      subsession_id: 84804777, 
+      race_name: 'The Bend',
+      penalties: [
+        { time: 5, name: 'Marc Nistor' },
+      ],
+    },
+    { 
+      subsession_id: 85156109, 
+      race_name: 'Hockenheimring',
+      penalties: [
+        { time: 5, name: 'Logan Grado' },
+        { time: 5, name: 'William Wolfe4' },
+        { time: 5, name: 'James Franznick' },
       ],
     },
   ],
