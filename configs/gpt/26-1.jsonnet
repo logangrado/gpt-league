@@ -30,7 +30,7 @@
         { name: 'Robby Prescott' },
         { name: 'Ross Yost' },
         { name: 'Scott Dancer' },
-        { name: ''Wyatt Roberts'},
+        { name: 'Wyatt Roberts'},
       ],
     },
     {
