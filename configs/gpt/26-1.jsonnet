@@ -30,6 +30,7 @@
         { name: 'Robby Prescott' },
         { name: 'Ross Yost' },
         { name: 'Scott Dancer' },
+        { name: ''Wyatt Roberts'},
       ],
     },
     {
@@ -54,6 +55,8 @@
         { name: 'Rodney Campbell2' },
         { name: 'Samuel de Oliveira' },        
         { name: 'William Wolfe4' },
+        { name: 'Tom Brice' },
+        { name: 'Mike Matson' },
       ],
     },
   ],
