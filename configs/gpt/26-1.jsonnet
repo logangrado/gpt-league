@@ -153,5 +153,6 @@
       ],
     },
     { subsession_id: 85503377, race_name: 'Algarve International Circuit' },
+    { subsession_id: 85842675, race_name: 'Suzuka International Racing Course' },
   ],
 }
