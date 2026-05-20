@@ -57,6 +57,7 @@
         { name: 'William Wolfe4' },
         { name: 'Tom Brice' },
         { name: 'Mike Matson' },
+        { name: 'Shajee Zuhair' },
       ],
     },
   ],
