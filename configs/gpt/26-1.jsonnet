@@ -31,6 +31,7 @@
         { name: 'Ross Yost' },
         { name: 'Scott Dancer' },
         { name: 'Wyatt Roberts'},
+        { name: 'Scott Kessel'}
       ],
     },
     {
@@ -56,6 +57,7 @@
         { name: 'Samuel de Oliveira' },        
         { name: 'William Wolfe4' },
         { name: 'Tom Brice' },
+        { name: 'Shajee Zuhair'},
         { name: 'Mike Matson' },
       ],
     },
@@ -152,7 +154,7 @@
         { time: 5, name: 'James Franznick' },
       ],
     },
-    { subsession_id: 85503377, race_name: 'Algarve International Circuit' },
-    { subsession_id: 85842675, race_name: 'Suzuka International Racing Course' },
+    { subsession_id: 85503377, race_name: 'Algarve' },
+    { subsession_id: 85842675, race_name: 'Suzuka' },
   ],
 }
