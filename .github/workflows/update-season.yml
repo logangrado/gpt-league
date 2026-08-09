@@ -39,9 +39,11 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           CLIENT_USERNAME: ${{ secrets.CLIENT_USERNAME }}
           CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+          LEAGUE_ID: '10301'
+          SEASON_ID: '135873'
         run: |
           set +e
-          output=$(uv run gpt-scoring update-season ./configs/gpt/26-1.jsonnet 10301 128672 2>&1)
+          output=$(uv run gpt-scoring update-season ./configs/gpt/current $LEAGUE_ID $SEASON_ID 2>&1)
           exit_code=$?
           echo "$output"
           set -e

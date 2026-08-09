@@ -30,8 +30,6 @@
         { name: 'Robby Prescott' },
         { name: 'Ross Yost' },
         { name: 'Scott Dancer' },
-        { name: 'Wyatt Roberts'},
-        { name: 'Scott Kessel'}
       ],
     },
     {
@@ -54,11 +52,8 @@
         { name: 'Robert Galejs' },
         { name: 'Robert Neville' },
         { name: 'Rodney Campbell2' },
-        { name: 'Samuel de Oliveira' },        
+        { name: 'Samuel de Oliveira' },
         { name: 'William Wolfe4' },
-        { name: 'Tom Brice' },
-        { name: 'Shajee Zuhair'},
-        { name: 'Mike Matson' },
       ],
     },
   ],
@@ -71,90 +66,12 @@
       import '24_gt3.jsonnet',
       import '25-1_lmp2.jsonnet',
       import '25-2_gt4.jsonnet',
+      import '26-1.jsonnet',
     ],
     min_races: 4,
     time_window: '365 days',
     weight: 0.5,
   },
   races: [
-    {
-      subsession_id: 82684096,
-      race_name: 'Interlagos',
-      penalties: [
-        // Minkler
-        { user_id: 48076, time: 5 },
-        // Mann
-        { user_id: 603983, time: 5 },
-      ],
-    },
-    {
-      subsession_id: 83060140,
-      race_name: 'Road Atlanta',
-      penalties: [
-        { user_id: 335343, time: 5 },
-        { user_id: 464635, time: 5 },
-        { user_id: 622340, time: 5 },
-      ],
-    },
-    {
-      subsession_id: 83429093,
-      race_name: 'Imola',
-      penalties: [
-        {
-          user_id: 436882,  //Nevil
-          time: 10,
-        },
-      ],
-    },
-    {
-      subsession_id: 83800241,
-      race_name: 'Sebring',
-      penalties: [
-        {
-          user_id: 346566,
-          time: 5,
-        },
-      ],
-    },
-    {
-      subsession_id: 84164646,
-      race_name: 'Road America',
-      points_type: 'major',
-      penalties: [
-        // Logan
-        { user_id: 622340, time: 5 },
-        // Mann
-        { user_id: 603983, time: 5 },
-        // Logan
-        { user_id: 1049877, time: 5 },
-        // Mann
-        { user_id: 721524, time: 5 },
-      ],
-    },
-    { 
-      subsession_id: 84445944, 
-      race_name: 'Adelaide',
-      penalties: [
-        { time: 5, name: 'Matthew Siddall' },
-      ],
-    },
-    { 
-      subsession_id: 84804777, 
-      race_name: 'The Bend',
-      penalties: [
-        { time: 5, name: 'Marc Nistor' },
-      ],
-    },
-    { 
-      subsession_id: 85156109, 
-      race_name: 'Hockenheimring',
-      penalties: [
-        { time: 5, name: 'Logan Grado' },
-        { time: 5, name: 'William Wolfe4' },
-        { time: 5, name: 'James Franznick' },
-      ],
-    },
-    { subsession_id: 85503377, race_name: 'Algarve' },
-    { subsession_id: 85842675, race_name: 'Suzuka' },
   ],
 }
