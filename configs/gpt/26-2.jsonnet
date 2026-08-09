@@ -76,7 +76,7 @@
   races: [
     { 
       subsession_id: 87695916, 
-      race_name: 'Circuit de Barcelona Catalunya' 
+      race_name: 'Circuit de Barcelona Catalunya',
       penalties: [
         {time: 5, name: 'Samuel de Oliveira'},
       ]
