@@ -1,0 +1,1 @@
+/Users/grado/Code/projects/gpt-league/configs/gpt/26-1.jsonnet
