@@ -43,7 +43,8 @@ jobs:
           SEASON_ID: '135873'
         run: |
           set +e
-          output=$(uv run gpt-scoring update-season ./configs/gpt/current $LEAGUE_ID $SEASON_ID 2>&1)
+          TARGET=$(readlink configs/gpt/current)
+          output=$(uv run gpt-scoring update-season $TARGET $LEAGUE_ID $SEASON_ID 2>&1)
           exit_code=$?
           echo "$output"
           set -e
@@ -54,8 +55,8 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          target=$(readlink configs/gpt/current)
-          if git diff --quiet "configs/gpt/$target"; then
+          TARGET=$(readlink configs/gpt/current)
+          if git diff --quiet "configs/gpt/$TARGET"; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -67,14 +68,14 @@ jobs:
           GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
           ADDED: ${{ steps.update.outputs.added }}
         run: |
-          target=$(readlink configs/gpt/current)
+          TARGET=$(readlink configs/gpt/current)
           branch="auto/update-season"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if ! git rev-parse --verify "$branch" &>/dev/null; then
             git checkout -b "$branch"
           fi
-          git add "configs/gpt/$target"
+          git add "configs/gpt/$TARGET"
           git commit -m "$ADDED"
           git push origin "$branch"
           if gh pr view "$branch" --json state -q .state 2>/dev/null | grep -q "OPEN"; then
