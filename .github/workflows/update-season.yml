@@ -54,7 +54,8 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          if git diff --quiet configs/gpt/26-1.jsonnet; then
+          target=$(readlink configs/gpt/current)
+          if git diff --quiet "configs/gpt/$target"; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -66,13 +67,14 @@ jobs:
           GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
           ADDED: ${{ steps.update.outputs.added }}
         run: |
+          target=$(readlink configs/gpt/current)
           branch="auto/update-season"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if ! git rev-parse --verify "$branch" &>/dev/null; then
             git checkout -b "$branch"
           fi
-          git add configs/gpt/26-1.jsonnet
+          git add "configs/gpt/$target"
           git commit -m "$ADDED"
           git push origin "$branch"
           if gh pr view "$branch" --json state -q .state 2>/dev/null | grep -q "OPEN"; then
