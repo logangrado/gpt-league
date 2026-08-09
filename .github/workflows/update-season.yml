@@ -43,7 +43,7 @@ jobs:
           SEASON_ID: '135873'
         run: |
           set +e
-          output=$(uv run gpt-scoring update-season ./configs/gpt/current.jsonnet $LEAGUE_ID $SEASON_ID 2>&1)
+          output=$(uv run gpt-scoring update-season ./configs/gpt/current $LEAGUE_ID $SEASON_ID 2>&1)
           exit_code=$?
           echo "$output"
           set -e
