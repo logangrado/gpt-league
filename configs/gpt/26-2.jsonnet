@@ -30,7 +30,6 @@
         { name: 'Robby Prescott' },
         { name: 'Ross Yost' },
         { name: 'Scott Dancer' },
-        { name: 'Derek Tirums' },
       ],
     },
     {
