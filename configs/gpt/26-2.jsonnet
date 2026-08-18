@@ -84,5 +84,6 @@
         { time: 5, name: 'Samuel de Oliveira' },
       ],
     },
+    { subsession_id: 88041756, race_name: 'Fuji International Speedway' },
   ],
 }
