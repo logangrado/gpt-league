@@ -314,12 +314,12 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "gpt-racing", git = "https://github.com/logangrado/gpt-racing.git?tag=v0.8.0" }]
+requires-dist = [{ name = "gpt-racing", git = "https://github.com/logangrado/gpt-racing.git?tag=v0.8.2" }]
 
 [[package]]
 name = "gpt-racing"
-version = "0.8.0"
-source = { git = "https://github.com/logangrado/gpt-racing.git?tag=v0.8.0#3af5a646e545479a7c8430d90dd2361ab6c67a4c" }
+version = "0.8.2"
+source = { git = "https://github.com/logangrado/gpt-racing.git?tag=v0.8.2#7786b6a9713f5c6a6fd4c205a590aeb50c4b78d5" }
 dependencies = [
     { name = "ansible-vault" },
     { name = "beautifulsoup4" },
