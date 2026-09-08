@@ -59,6 +59,7 @@
         { name: 'Tom Brice' },
         { name: 'Wyatt Roberts' },
         { name: 'Mike Matson' },
+        { name: 'Jonathan Fields' },
       ],
     },
   ],
