@@ -88,5 +88,6 @@
     },
     { subsession_id: 88041756, race_name: 'Fuji International Speedway' },
     { subsession_id: 88382136, race_name: 'Autodromo Internazionale del Mugello' },
+    { subsession_id: 88639211, race_name: 'Misano World Circuit Marco Simoncelli' },
   ],
 }
