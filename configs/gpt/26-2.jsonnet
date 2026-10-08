@@ -91,6 +91,7 @@
     { subsession_id: 88382136, race_name: 'Autodromo Internazionale del Mugello' },
     { subsession_id: 88639211, race_name: 'Misano World Circuit Marco Simoncelli' },
     { subsession_id: 88986230, race_name: 'Circuit des 24 Heures du Mans',
+      points_type: 'major',
       penalties: [
         { time: 5, name: 'Peter Kummer' },
         { time: 5, name: 'Jason Barnett3' }
