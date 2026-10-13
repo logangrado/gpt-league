@@ -97,5 +97,6 @@
         { time: 5, name: 'Jason Barnett3' }
       ]
     },
+    { subsession_id: 89327848, race_name: 'Detroit Grand Prix at Belle Isle' },
   ],
 }
