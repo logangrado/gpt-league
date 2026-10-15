@@ -61,8 +61,8 @@
         { name: 'Wyatt Roberts' },
         { name: 'Mike Matson' },
         { name: 'Jonathan Fields' },
-        { name: 'Andrew Frank' }
-        { name: 'Aiden Goertz' }
+        { name: 'Andrew Frank' },
+        { name: 'Aiden Goertz' },
         { name: 'Jeff Hedges' }
       ],
     },
