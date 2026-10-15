@@ -31,6 +31,7 @@
         { name: 'Scott Dancer' },
         { name: 'William Wolfe4' },
         { name: 'Shea A. McNeely' }
+        { name: 'Aiden Goertz' },
       ],
     },
     {
@@ -62,7 +63,6 @@
         { name: 'Mike Matson' },
         { name: 'Jonathan Fields' },
         { name: 'Andrew Frank' },
-        { name: 'Aiden Goertz' },
         { name: 'Jeff Hedges' }
       ],
     },
