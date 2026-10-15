@@ -30,6 +30,7 @@
         { name: 'Samuel de Oliveira' },
         { name: 'Scott Dancer' },
         { name: 'William Wolfe4' },
+        { name: 'Shea A. McNeely' }
       ],
     },
     {
@@ -61,6 +62,8 @@
         { name: 'Mike Matson' },
         { name: 'Jonathan Fields' },
         { name: 'Andrew Frank' }
+        { name: 'Aiden Goertz' }
+        { name: 'Jeff Hedges' }
       ],
     },
   ],
@@ -97,6 +100,11 @@
         { time: 5, name: 'Jason Barnett3' }
       ]
     },
-    { subsession_id: 89327848, race_name: 'Detroit Grand Prix at Belle Isle' },
+    { subsession_id: 89327848, race_name: 'Detroit Grand Prix at Belle Isle' 
+      penalties: [
+        { time: 5, name: 'Ross Yost' },
+        { time: 5, name: 'Matt Mosby' }
+      ]
+    },
   ],
 }
