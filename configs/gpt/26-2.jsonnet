@@ -100,7 +100,7 @@
         { time: 5, name: 'Jason Barnett3' }
       ]
     },
-    { subsession_id: 89327848, race_name: 'Detroit Grand Prix at Belle Isle' 
+    { subsession_id: 89327848, race_name: 'Detroit Grand Prix at Belle Isle',
       penalties: [
         { time: 5, name: 'Ross Yost' },
         { time: 5, name: 'Matt Mosby' }
