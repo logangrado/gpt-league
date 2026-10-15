@@ -30,7 +30,7 @@
         { name: 'Samuel de Oliveira' },
         { name: 'Scott Dancer' },
         { name: 'William Wolfe4' },
-        { name: 'Shea A. McNeely' }
+        { name: 'Shea A. McNeely' },
         { name: 'Aiden Goertz' },
       ],
     },
@@ -63,7 +63,7 @@
         { name: 'Mike Matson' },
         { name: 'Jonathan Fields' },
         { name: 'Andrew Frank' },
-        { name: 'Jeff Hedges' }
+        { name: 'Jeff Hedges' },
       ],
     },
   ],
