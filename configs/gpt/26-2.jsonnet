@@ -30,6 +30,8 @@
         { name: 'Samuel de Oliveira' },
         { name: 'Scott Dancer' },
         { name: 'William Wolfe4' },
+        { name: 'Shea A. McNeely' },
+        { name: 'Aiden Goertz' },
       ],
     },
     {
@@ -60,6 +62,8 @@
         { name: 'Wyatt Roberts' },
         { name: 'Mike Matson' },
         { name: 'Jonathan Fields' },
+        { name: 'Andrew Frank' },
+        { name: 'Jeff Hedges' },
       ],
     },
   ],
@@ -89,5 +93,18 @@
     { subsession_id: 88041756, race_name: 'Fuji International Speedway' },
     { subsession_id: 88382136, race_name: 'Autodromo Internazionale del Mugello' },
     { subsession_id: 88639211, race_name: 'Misano World Circuit Marco Simoncelli' },
+    { subsession_id: 88986230, race_name: 'Circuit des 24 Heures du Mans',
+      points_type: 'major',
+      penalties: [
+        { time: 5, name: 'Peter Kummer' },
+        { time: 5, name: 'Jason Barnett3' }
+      ]
+    },
+    { subsession_id: 89327848, race_name: 'Detroit Grand Prix at Belle Isle',
+      penalties: [
+        { time: 5, name: 'Ross Yost' },
+        { time: 5, name: 'Matt Mosby' }
+      ]
+    },
   ],
 }
