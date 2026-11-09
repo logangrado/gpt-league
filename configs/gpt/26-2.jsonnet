@@ -32,6 +32,8 @@
         { name: 'William Wolfe4' },
         { name: 'Shea A. McNeely' },
         { name: 'Aiden Goertz' },
+        { name: 'N P Burley' },
+        { name: 'Westley Bryce' },
       ],
     },
     {
@@ -106,5 +108,6 @@
         { time: 5, name: 'Matt Mosby' }
       ]
     },
+    { subsession_id: 89667081, race_name: 'Circuit de Spa-Francorchamps' },
   ],
 }
