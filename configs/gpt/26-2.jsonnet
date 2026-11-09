@@ -32,6 +32,8 @@
         { name: 'William Wolfe4' },
         { name: 'Shea A. McNeely' },
         { name: 'Aiden Goertz' },
+        { name: 'N P Burley' },
+        { name: 'Westley Bryce' },
       ],
     },
     {
@@ -64,8 +66,6 @@
         { name: 'Jonathan Fields' },
         { name: 'Andrew Frank' },
         { name: 'Jeff Hedges' },
-        { name: 'N P Burley' },
-        { name: 'Westley Bryce' },
       ],
     },
   ],
