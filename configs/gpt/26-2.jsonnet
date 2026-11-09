@@ -64,6 +64,8 @@
         { name: 'Jonathan Fields' },
         { name: 'Andrew Frank' },
         { name: 'Jeff Hedges' },
+        { name: 'N P Burley' },
+        { name: 'Westley Bryce' },
       ],
     },
   ],
