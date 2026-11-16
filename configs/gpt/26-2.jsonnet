@@ -109,6 +109,11 @@
       ]
     },
     { subsession_id: 89667081, race_name: 'Circuit de Spa-Francorchamps' },
-    { subsession_id: 90006063, race_name: 'Watkins Glen International' },
+    { 
+      subsession_id: 90006063, race_name: 'Watkins Glen International' 
+      penalties: [
+        { time: 5, name: 'Westley Bryce' },
+      ],
+    },
   ],
 }
